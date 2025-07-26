@@ -4,7 +4,7 @@ import { hexToRgbString } from "../utils/utils";
 export default function ThemePicker() {
   const [color, setColor] = useThemeColor();
 
-  const colors = ["#00A6F5", "#FEA5D5", "#F7339A"];
+  const colors = ["#00A6F5", "#FEA5D5", "#F7339A", "#000"];
 
   return (
     <div className="rounded-t-4xl bg-white p-4">
