@@ -9,9 +9,8 @@ const NoteHistory = ({ notes }) => {
 
   return (
     <div className="rounded-t-4xl bg-white p-6">
-      <h2 className="mb-6 text-xl font-bold">Historique des notes</h2>
-      <ScoreHistoryChart data={sortedNotes.slice(0, 6)} />
-      <ul className="mt-12">
+      <ScoreHistoryChart data={sortedNotes.slice(0, 10)} />
+      <ul className="mt-6">
         {sortedNotes.map((n) => {
           return (
             <li

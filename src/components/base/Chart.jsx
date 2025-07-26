@@ -33,7 +33,22 @@ export const ScoreHistoryChart = ({ data }) => {
   const primaryAxis = useMemo(
     () => ({
       getValue: (d) => d.date,
-      scaleType: "time",
+      formatters: {
+        scale: (value) => {
+          return new Intl.DateTimeFormat("fr-FR", {
+            month: "short",
+            day: "numeric",
+          }).format(value);
+        },
+        tooltip: (value) => {
+          return new Intl.DateTimeFormat("fr-FR", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }).format(value);
+        },
+      },
     }),
     [],
   );

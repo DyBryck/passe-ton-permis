@@ -12,7 +12,7 @@ const AverageScore = ({ scores }) => {
     },
     yellow: {
       color: "#ff8427",
-      message: "Tu es à ça d'être prêt(e) à passer l'examen !",
+      message: "Encore un effort !",
       image: yellowLight,
     },
     red: {
@@ -27,9 +27,9 @@ const AverageScore = ({ scores }) => {
   };
 
   const calculateAverageScore = (scores) => {
-    if (scores.length < 6) return;
+    if (scores.length < 10) return;
 
-    const recentScores = scores.slice(-6);
+    const recentScores = scores.slice(-10);
     const average =
       recentScores.reduce((a, b) => a + b, 0) / recentScores.length;
 
@@ -39,8 +39,8 @@ const AverageScore = ({ scores }) => {
 
   const getColor = (score) => {
     if (typeof score !== "number") return "gray";
-    if (score >= 35) return "green";
-    if (score >= 30) return "yellow";
+    if (score >= 36) return "green";
+    if (score >= 31) return "yellow";
     else return "red";
   };
   const color = getColor(averageScore);
@@ -54,7 +54,7 @@ const AverageScore = ({ scores }) => {
         {averageScore ? (
           <p>
             Tu as <span className="font-bold">{averageScore}</span> de moyenne
-            sur tes 6 dernières séances.
+            sur tes 10 dernières séances.
           </p>
         ) : (
           <img
@@ -77,6 +77,3 @@ const AverageScore = ({ scores }) => {
 };
 
 export default AverageScore;
-
-// voir pour mettre un feu tricolore en fonction de la moyenne
-// personnaliser des messages

@@ -78,7 +78,6 @@ const AddNote = () => {
 
   return (
     <div className="flex flex-col gap-4 rounded-t-4xl bg-white p-6">
-      <h2 className="text-xl font-bold">Ajouter une note</h2>
       <form onSubmit={handleAddNote} className="flex flex-col font-semibold">
         <label htmlFor="date" className="mb-1">
           Jour de ta séance
